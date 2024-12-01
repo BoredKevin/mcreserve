@@ -1,0 +1,22 @@
+services:
+  server:
+    image: itzg/minecraft-server
+    tty: true
+    stdin_open: true
+    ports:
+      - "25565:25565"
+      - "25575:25575"
+    environment:
+      EULA: true
+      TYPE: "fabric"
+      ENABLE_RCON: true
+      BROADCAST_RCON_TO_OPS: true
+      RCON_PASSWORD: ${RCON_PASSWORD}
+    volumes:
+      - ./mcreserve_data:/data
+
+  playit:
+    image: ghcr.io/playit-cloud/playit-agent:latest
+    network_mode: host
+    environment:
+      SECRET_KEY: ${PLAYIT_SECRET_KEY}
