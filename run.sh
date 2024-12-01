@@ -24,7 +24,7 @@ fi
 if [ ! -d "./mcreserve_data" ]; then
   mkdir -p ./mcreserve_data
   echo "Importing data from rclone remote..."
-  rclone sync --exclude ${RCLONE_EXCLUDE} --config ./rclone_config.toml -P ./mcreserve_data "${remote_name}:mcreserve"
+  rclone copy --config ./rclone_config.toml -P "${remote_name}:mcreserve" ./mcreserve_data
 fi
 
 chmod +x stop.sh
