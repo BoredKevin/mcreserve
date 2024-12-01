@@ -1,0 +1,7 @@
+[drive]
+type = drive
+client_id = 9325546985-4sa2dq38dpgqfm05j3eablrn86jhhjja.apps.googleusercontent.com
+client_secret = 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
+scope = drive
+token = {"access_token":"ya29.F9zoJdC07XdEQT-1BX9fIkdz88CB2-1BX9fIkdz88CB2-YV3OBKBJ4S-vWy3eoViawgZvELb7UvSHjjaRY4aicr0TOpjcjIC5TFrKwjMua5RCcM5jmLLkNVYcqW65ZCGSPBp4acKRnPJ","expiry":"2024-11-25T22:28:28.1663607+07:00"}
+team_drive =
