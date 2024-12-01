@@ -1,4 +1,5 @@
 #!/bin/bash
+[ -f .env ] && export $(grep -v '^#' .env | xargs)
 
 if ! command -v docker &> /dev/null; then
   echo "Docker not found. Installing..."
@@ -23,7 +24,7 @@ fi
 if [ ! -d "./mcreserve_data" ]; then
   mkdir -p ./mcreserve_data
   echo "Importing data from rclone remote..."
-  rclone sync --exclude "{libraries/**,.cache/**,.fabric/**}" --config ./rclone_config.toml -P ./mcreserve_data "${remote_name}:mcreserve"
+  rclone sync --exclude ${RCLONE_EXCLUDE} --config ./rclone_config.toml -P ./mcreserve_data "${remote_name}:mcreserve"
 fi
 
 chmod +x stop.sh
